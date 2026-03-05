@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Undress — Admin</title>
+<style>
+body{font-family:system-ui,Segoe UI,Arial;margin:0;background:#0b0b12;color:#fff}
+.wrap{max-width:1150px;margin:0 auto;padding:20px}
+.card{background:#151520;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}
+th{color:#bbb}
+.m{color:#9aa0a6}
+.pill{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);font-size:12px}
+</style></head>
+<body><div class="wrap">
+<h1>AI Undress — Admin</h1>
+<div class="card"><div class="pill">Открытие: /admin?key=YOUR_ADMIN_PASSWORD</div></div>
+
+<div class="card">
+<h2>Users</h2>
+<table><thead><tr><th>ID</th><th>Name</th><th>Username</th><th>Balance (Stars)</th><th>Referrer</th><th>Created</th></tr></thead>
+<tbody>
+{% for u in users %}
+<tr><td>{{u[0]}}</td><td>{{u[1]}}</td><td class="m">@{{u[2]}}</td><td>{{u[3]}}</td><td class="m">{{u[4]}}</td><td class="m">{{u[5]}}</td></tr>
+{% endfor %}
+</tbody></table>
+</div>
+
+<div class="card">
+<h2>Transactions</h2>
+<table><thead><tr><th>ID</th><th>User</th><th>Type</th><th>Amount</th><th>Created</th><th>Meta</th></tr></thead>
+<tbody>
+{% for t in txs %}
+<tr><td>{{t[0]}}</td><td>{{t[1]}}</td><td class="m">{{t[2]}}</td><td>{{t[3]}}</td><td class="m">{{t[4]}}</td><td class="m">{{t[5]}}</td></tr>
+{% endfor %}
+</tbody></table>
+</div>
+</div></body></html>
